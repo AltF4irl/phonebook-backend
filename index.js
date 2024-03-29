@@ -114,8 +114,8 @@ app.put('/api/contacts/:id', (req, res) => {
     res.status(201).json(currentContact)
 })
 
-// const PORT = process.env.PORT || 3001
-const PORT = 3001
+const PORT = process.env.PORT || 3001
+// const PORT = 3001
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
 })
