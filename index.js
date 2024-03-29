@@ -103,7 +103,19 @@ app.delete('/api/contacts/:id',  (req, res) => {
     res.json(deletedContact)    
 })
 
-const PORT = process.env.PORT || 3001
+app.put('/api/contacts/:id', (req, res) => {
+    const id = Number(req.params.id)
+    const currentContact = req.body 
+
+    console.log(currentContact, "ccurrent");
+
+    contacts = contacts.map(contact => contact.id === id? currentContact : contact)
+
+    res.status(201).json(currentContact)
+})
+
+// const PORT = process.env.PORT || 3001
+const PORT = 3001
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
 })
