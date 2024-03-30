@@ -35,6 +35,8 @@ let contacts = [
     }
 ]
 
+app.use(express.static('dist'))
+
 const generateId = () => {
     return Math.floor(Math.random() * 10000)
 }
